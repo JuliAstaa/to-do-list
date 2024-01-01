@@ -69,15 +69,15 @@ const Header = () => {
             <MdSort />
           </button>
           <div
-            className={`absolute origin-top-right transition-all ease-in-out duration-300 top-full right-full border-2 rounded-md p-4 flex flex-col w-96  bg-[#F0F0F0] text-base ${
+            className={`absolute origin-top-right transition-all ease-in-out duration-300 top-full right-full border-2 rounded-md p-4 flex flex-col w-72  bg-[#F0F0F0] text-base ${
               active ? "scale-100" : "scale-0"
             }`}
           >
             <h1 className="font-semibold">Filter</h1>
-            <div className="grid gap-2 w-full h-full grid-cols-3 mt-2">
+            <div className="flex gap-2 w-full h-full flex-wrap mt-2">
               <div
                 onClick={() => dispatch(setFilter(""))}
-                className={`cursor-pointer border p-1 flex justify-center items-center rounded-sm ${
+                className={`cursor-pointer border p-1 min-w-20 flex justify-center items-center rounded-sm ${
                   selectedFilter === "" ? "bg-biru-kayaknya text-white" : null
                 }`}
               >
@@ -87,7 +87,7 @@ const Header = () => {
                 return (
                   <div
                     onClick={() => dispatch(setFilter(filter.name))}
-                    className={`cursor-pointer border rounded-sm p-1 flex justify-center items-center ${
+                    className={`min-w-16 cursor-pointer border rounded-sm p-1 flex justify-center items-center ${
                       filter.name === selectedFilter
                         ? "bg-biru-kayaknya text-white"
                         : null
